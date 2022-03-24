@@ -6,7 +6,6 @@ import mss.tools
 
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QFont, QWindow
-from PyQt5.QtWidgets import QApplication, QMainWindow
 from pyqt_timer_label import TimerLabel
 from pyqt_transparent_centralwidget_window import TransparentCentralWidgetWindow
 from pyqt_svg_icon_pushbutton import SvgIconPushButton
@@ -112,12 +111,3 @@ class Capturer(TransparentCentralWidgetWindow):
 
     def __settings(self):
         print('settings')
-
-
-if __name__ == "__main__":
-    import sys
-
-    app = QApplication(sys.argv)
-    ex = Capturer(QMainWindow())
-    ex.show()
-    sys.exit(app.exec_())
