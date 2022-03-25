@@ -29,3 +29,11 @@ if __name__ == "__main__":
     ex.show()
     sys.exit(app.exec_())
 ```
+
+Result (Google Chrome main page's Google logo, for example)
+
+![image](https://user-images.githubusercontent.com/55078043/160045489-a7b016cf-0528-4a49-b085-f4e99869d5c4.png)
+
+Captured image
+
+![sample](https://user-images.githubusercontent.com/55078043/160045548-90708381-7870-435d-b750-051533d878a2.png)
