@@ -17,6 +17,8 @@ setup(
         'numpy',
         'pyqt-timer-label @ git+https://git@github.com/yjg30737/pyqt-timer-label.git@main',
         'pyqt-transparent-centralwidget-window @ git+https://git@github.com/yjg30737/pyqt-transparent-centralwidget-window.git@main',
-        'pyqt-svg-icon-pushbutton @ git+https://git@github.com/yjg30737/pyqt-svg-icon-pushbutton.git@main'
+        'pyqt-svg-icon-pushbutton @ git+https://git@github.com/yjg30737/pyqt-svg-icon-pushbutton.git@main',
+        'pyqt-color-button @ git+https://git@github.com/yjg30737/pyqt-color-button.git@main',
+        'pyqt-color-dialog @ git+https://git@github.com/yjg30737/pyqt-color-dialog.git@main'
     ]
 )

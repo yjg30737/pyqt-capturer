@@ -6,9 +6,12 @@ import mss.tools
 
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QFont, QWindow
+from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog
 from pyqt_timer_label import TimerLabel
 from pyqt_transparent_centralwidget_window import TransparentCentralWidgetWindow
 from pyqt_svg_icon_pushbutton import SvgIconPushButton
+
+from pyqt_capturer.settingsDialog import SettingsDialog
 
 
 class Capturer(TransparentCentralWidgetWindow):
@@ -110,4 +113,17 @@ class Capturer(TransparentCentralWidgetWindow):
             mss.tools.to_png(sct_img.rgb, sct_img.size, output=output)
 
     def __settings(self):
-        print('settings')
+        dialog = SettingsDialog()
+        reply = dialog.exec()
+        if reply == QDialog.Accepted:
+            color = dialog.getFrameColor()
+            self.setFrameColor(color)
+
+
+if __name__ == "__main__":
+    import sys
+
+    app = QApplication(sys.argv)
+    ex = Capturer(QMainWindow())
+    ex.show()
+    sys.exit(app.exec_())

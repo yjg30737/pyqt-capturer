@@ -4,3 +4,5 @@ numpy
 git+https://git@github.com/yjg30737/pyqt-timer-label.git@main
 git+https://git@github.com/yjg30737/pyqt-transparent-centralwidget-window.git@main
 git+https://git@github.com/yjg30737/pyqt-svg-icon-pushbutton.git@main
+git+https://git@github.com/yjg30737/pyqt-color-button.git@main
+git+https://git@github.com/yjg30737/pyqt-color-dialog.git@main
