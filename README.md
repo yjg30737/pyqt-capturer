@@ -14,8 +14,8 @@ PyQt application which can capture/record certain area of screen
 * <a href="https://github.com/yjg30737/pyqt-timer-label.git">pyqt-timer-label</a>
 * <a href="https://github.com/yjg30737/pyqt-transparent-centralwidget-window.git">pyqt-transparent-centralwidget-window</a>
 * <a href="https://github.com/yjg30737/pyqt-svg-icon-pushbutton.git">pyqt-svg-icon-pushbutton</a>
-* <a href="https://github.com/yjg30737/pyqt-color-button.git">pyqt-color-button</a>
-* <a href="https://github.com/yjg30737/pyqt-color-dialog.git">pyqt-color-dialog</a>
+* <a href="https://github.com/yjg30737/pyqt-color-button.git">pyqt-color-button</a> - Using by Settings Dialog
+* <a href="https://github.com/yjg30737/pyqt-color-dialog.git">pyqt-color-dialog</a> - Using by Settings Dialog
 
 ## Detailed Description
 
@@ -28,8 +28,6 @@ If you click the camera icon it will capture anything inside of the frame and sa
 If you click the recorder icon, it will record anything inside of the frame and save it as "sample.mp4" at script folder. But result video is silent currently.
 
 You can see the label next to recorder icon. That is elapsed time from starting record.
-
-Never mind about setting icon. Currently i'm working on it.
 
 You can move/resize the frame.
 
