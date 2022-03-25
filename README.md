@@ -40,4 +40,6 @@ Captured image
 
 If you click the camera icon it will capture anything inside of the frame.
 
-Video goes the same(click the recorder icon), but video is silent. 
+Video goes the same(click the recorder icon), but video is silent.
+
+Catured image will be saved as "sample.png", Video is "sample.mp4".
