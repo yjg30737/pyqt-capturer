@@ -15,7 +15,8 @@ from pyqt_capturer.settingsDialog import SettingsDialog
 
 
 class Capturer(TransparentCentralWidgetWindow):
-    def __init__(self, main_window):
+    def __init__(self):
+        main_window = QMainWindow()
         super().__init__(main_window)
         self.__initVal(main_window)
         self.__initUi(main_window)
@@ -124,6 +125,6 @@ if __name__ == "__main__":
     import sys
 
     app = QApplication(sys.argv)
-    ex = Capturer(QMainWindow())
+    ex = Capturer()
     ex.show()
     sys.exit(app.exec_())
