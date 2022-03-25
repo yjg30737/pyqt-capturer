@@ -14,6 +14,8 @@ PyQt application which can capture/record certain area of screen
 * <a href="https://github.com/yjg30737/pyqt-timer-label.git">pyqt-timer-label</a>
 * <a href="https://github.com/yjg30737/pyqt-transparent-centralwidget-window.git">pyqt-transparent-centralwidget-window</a>
 * <a href="https://github.com/yjg30737/pyqt-svg-icon-pushbutton.git">pyqt-svg-icon-pushbutton</a>
+* <a href="https://github.com/yjg30737/pyqt-color-button.git">pyqt-color-button</a>
+* <a href="https://github.com/yjg30737/pyqt-color-dialog.git">pyqt-color-dialog</a>
 
 ## Detailed Description
 
@@ -34,14 +36,14 @@ You can move/resize the frame.
 ## Example
 Code Sample
 ```python
-from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt5.QtWidgets import QApplication
 from pyqt_capturer import Capturer
 
 if __name__ == "__main__":
     import sys
 
     app = QApplication(sys.argv)
-    ex = Capturer(QMainWindow())
+    ex = Capturer()
     ex.show()
     sys.exit(app.exec_())
 ```
