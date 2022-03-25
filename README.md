@@ -37,3 +37,7 @@ Result (Google Chrome main page's Google logo, for example)
 Captured image
 
 ![sample](https://user-images.githubusercontent.com/55078043/160045548-90708381-7870-435d-b750-051533d878a2.png)
+
+If you click the camera icon it will capture anything inside of the frame.
+
+Video goes the same(click the recorder icon), but video is silent. 
