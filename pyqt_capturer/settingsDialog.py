@@ -1,7 +1,8 @@
-from PyQt5.QtWidgets import QDialog, QFormLayout, QWidget, QPushButton, QVBoxLayout, QHBoxLayout
-from PyQt5.QtCore import Qt
+from PyQt5.QtWidgets import QDialog, QFormLayout, QWidget, QPushButton, QVBoxLayout, QHBoxLayout, QGroupBox
+from PyQt5.QtCore import Qt, QSettings
 from pyqt_color_button import ColorButton
 from pyqt_color_dialog import ColorPickerDialog
+from pyqt_find_path_widget import FindPathWidget
 
 
 class SettingsDialog(QDialog):
@@ -19,10 +20,29 @@ class SettingsDialog(QDialog):
         self.__frameColor.clicked.connect(self.__showFrameColorDialog)
         self.__menuColor.clicked.connect(self.__showMenuColorDialog)
 
+        colorGrpBox = QGroupBox()
+        colorGrpBox.setTitle('Color')
+
         lay = QFormLayout()
         lay.addRow('Frame Color', self.__frameColor)
         lay.addRow('Menu Color', self.__menuColor)
-        lay.setContentsMargins(0, 0, 0, 2)
+
+        colorGrpBox.setLayout(lay)
+
+        savePathGrpBox = QGroupBox()
+        savePathGrpBox.setTitle('Save Path')
+
+        findPathWidget = FindPathWidget()
+
+        lay = QHBoxLayout()
+        lay.addWidget(findPathWidget)
+
+        savePathGrpBox.setLayout(lay)
+
+        lay = QVBoxLayout()
+        lay.addWidget(colorGrpBox)
+        lay.addWidget(savePathGrpBox)
+        lay.setContentsMargins(0, 0, 0, 5)
 
         topWidget = QWidget()
         topWidget.setLayout(lay)

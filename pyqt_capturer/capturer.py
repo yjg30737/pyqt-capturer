@@ -4,7 +4,7 @@ import numpy as np
 import mss
 import mss.tools
 
-from PyQt5.QtCore import Qt
+from PyQt5.QtCore import Qt, QSettings
 from PyQt5.QtGui import QFont, QWindow
 from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog
 from pyqt_timer_label import TimerLabel
@@ -28,6 +28,11 @@ class Capturer(TransparentCentralWidgetWindow):
         self.__height = 0
         self.__t = 0
         self.__record_flag = False
+
+        self.__settings_struct = QSettings('capturer.ini', QSettings.IniFormat)
+        self.__hour = int(self.__settings_struct.value('frame_color', 0))
+        self.__min = int(self.__settings_struct.value('menu_color', 0))
+        self.__sec = int(self.__settings_struct.value('save_path', 0))
 
     def __initUi(self, main_window):
         self.setButtons()
