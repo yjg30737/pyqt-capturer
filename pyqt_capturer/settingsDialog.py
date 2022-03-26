@@ -1,4 +1,4 @@
-import os.path
+import os
 
 from PyQt5.QtWidgets import QDialog, QFormLayout, QWidget, QPushButton, QVBoxLayout, QHBoxLayout, QGroupBox
 from PyQt5.QtCore import Qt, QSettings
@@ -34,8 +34,7 @@ class SettingsDialog(QDialog):
         savePathGrpBox = QGroupBox()
         savePathGrpBox.setTitle('Save Path')
 
-        findPathWidget = FindPathWidget(os.path.dirname(__file__))
-        findPathWidget.setAsDirectory(True)
+        findPathWidget = FindPathWidget(os.getcwd())
 
         lay = QHBoxLayout()
         lay.addWidget(findPathWidget)
