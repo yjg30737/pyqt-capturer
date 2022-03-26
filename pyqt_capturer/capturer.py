@@ -40,11 +40,13 @@ class Capturer(TransparentCentralWidgetWindow):
         lay = cornerWidget.layout()
 
         recordBtn = SvgIconPushButton()
+        recordBtn.setShortcut('F6')
         recordBtn.setIcon('ico/video.svg')
         recordBtn.setCheckable(True)
         recordBtn.toggled.connect(self.__recordToggled)
 
         captureBtn = SvgIconPushButton()
+        captureBtn.setShortcut('F5')
         captureBtn.setIcon('ico/capture.svg')
         captureBtn.clicked.connect(self.__capture)
 
