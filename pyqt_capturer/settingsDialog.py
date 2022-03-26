@@ -1,3 +1,5 @@
+import os.path
+
 from PyQt5.QtWidgets import QDialog, QFormLayout, QWidget, QPushButton, QVBoxLayout, QHBoxLayout, QGroupBox
 from PyQt5.QtCore import Qt, QSettings
 from pyqt_color_button import ColorButton
@@ -32,7 +34,8 @@ class SettingsDialog(QDialog):
         savePathGrpBox = QGroupBox()
         savePathGrpBox.setTitle('Save Path')
 
-        findPathWidget = FindPathWidget()
+        findPathWidget = FindPathWidget(os.path.dirname(__file__))
+        findPathWidget.setAsDirectory(True)
 
         lay = QHBoxLayout()
         lay.addWidget(findPathWidget)
