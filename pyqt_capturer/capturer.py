@@ -1,4 +1,4 @@
-import threading, time, cv2
+import threading, time, os, cv2
 import numpy as np
 
 import mss
@@ -29,10 +29,10 @@ class Capturer(TransparentCentralWidgetWindow):
         self.__t = 0
         self.__record_flag = False
 
-        self.__settings_struct = QSettings('capturer.ini', QSettings.IniFormat)
-        self.__hour = int(self.__settings_struct.value('frame_color', 0))
-        self.__min = int(self.__settings_struct.value('menu_color', 0))
-        self.__sec = int(self.__settings_struct.value('save_path', 0))
+        self.__settingsStruct = QSettings('capturer.ini', QSettings.IniFormat)
+        self.__frameColor = self.__settingsStruct.value('frameColor', '#FFFFFF')
+        self.__menuColor = self.__settingsStruct.value('menuColor', '#FFFFFF')
+        self.__savePath = self.__settingsStruct.value('savePath', os.getcwd())
 
     def __initUi(self, main_window):
         self.setButtons()
@@ -63,6 +63,8 @@ class Capturer(TransparentCentralWidgetWindow):
         lay.insertWidget(0, recordBtn)
         lay.insertWidget(0, captureBtn)
         lay.setAlignment(Qt.AlignVCenter | Qt.AlignRight)
+
+        self.setFrameColor(self.__frameColor)
 
     def __initScreenGeometry(self):
         w = QWindow()
@@ -115,7 +117,7 @@ class Capturer(TransparentCentralWidgetWindow):
     def __capture(self):
         self.__initScreenGeometry()
         with mss.mss() as sct:
-            output = 'sample.png'
+            output = os.path.join(self.__savePath, 'sample.png')
             monitor = {'top': self.__top, 'left': self.__left, 'width': self.__width, 'height': self.__height}
             sct_img = sct.grab(monitor)
             mss.tools.to_png(sct_img.rgb, sct_img.size, output=output)
@@ -125,6 +127,9 @@ class Capturer(TransparentCentralWidgetWindow):
         reply = dialog.exec()
         if reply == QDialog.Accepted:
             color = dialog.getFrameColor()
+            savePath = dialog.getSavePath()
+            self.__settingsStruct.setValue('frameColor', color.name())
+            self.__settingsStruct.setValue('savePath', savePath)
             self.setFrameColor(color)
 
 
