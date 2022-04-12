@@ -39,13 +39,13 @@ class Capturer(TransparentCentralWidgetWindow):
         cornerWidget = self.getCornerWidget()
         lay = cornerWidget.layout()
 
-        recordBtn = SvgIconPushButton()
+        recordBtn = SvgIconPushButton(self)
         recordBtn.setShortcut('F6')
         recordBtn.setIcon('ico/video.svg')
         recordBtn.setCheckable(True)
         recordBtn.toggled.connect(self.__recordToggled)
 
-        captureBtn = SvgIconPushButton()
+        captureBtn = SvgIconPushButton(self)
         captureBtn.setShortcut('F5')
         captureBtn.setIcon('ico/capture.svg')
         captureBtn.clicked.connect(self.__capture)
@@ -54,7 +54,7 @@ class Capturer(TransparentCentralWidgetWindow):
         self.__timer_lbl.setFont(QFont('Arial', 12))
         self.__timer_lbl.setTimerReverse(False)
 
-        settingsBtn = SvgIconPushButton()
+        settingsBtn = SvgIconPushButton(self)
         settingsBtn.setIcon('ico/settings.svg')
         settingsBtn.clicked.connect(self.__settings)
 
