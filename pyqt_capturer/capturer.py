@@ -31,7 +31,6 @@ class Capturer(TransparentCentralWidgetWindow):
 
         self.__settingsStruct = QSettings('capturer.ini', QSettings.IniFormat)
         self.__frameColor = self.__settingsStruct.value('frameColor', '#FFFFFF')
-        self.__menuColor = self.__settingsStruct.value('menuColor', '#FFFFFF')
         self.__savePath = self.__settingsStruct.value('savePath', os.getcwd())
 
     def __initUi(self, main_window):
