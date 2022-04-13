@@ -132,6 +132,11 @@ class Capturer(TransparentCentralWidgetWindow):
             self.__settingsStruct.setValue('savePath', savePath)
             self.setFrameColor(color)
 
+    def event(self, e):
+        if e.type() == 17:
+            self.setFrameColor(self.__frameColor)
+        return super().event(e)
+
 
 if __name__ == "__main__":
     import sys
