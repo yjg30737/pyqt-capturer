@@ -17,7 +17,6 @@ class SettingsDialog(QDialog):
     def __initVal(self):
         self.__settingsStruct = QSettings('capturer.ini', QSettings.IniFormat)
         self.__frameColor = self.__settingsStruct.value('frameColor', '#FFFFFF')
-        self.__menuColor = self.__settingsStruct.value('menuColor', '#FFFFFF')
         self.__savePath = self.__settingsStruct.value('savePath', '.')
 
     def __initUi(self):
@@ -28,19 +27,13 @@ class SettingsDialog(QDialog):
         r, g, b = frameColor.red(), frameColor.green(), frameColor.blue()
         self.__frameColorBtn = ColorButton(r=r, g=g, b=b)
 
-        menuColor = QColor(self.__menuColor)
-        r, g, b = menuColor.red(), menuColor.green(), menuColor.blue()
-        self.__menuColorBtn = ColorButton(r=r, g=g, b=b)
-
         self.__frameColorBtn.clicked.connect(self.__showFrameColorDialog)
-        self.__menuColorBtn.clicked.connect(self.__showMenuColorDialog)
 
         colorGrpBox = QGroupBox()
         colorGrpBox.setTitle('Color')
 
         lay = QFormLayout()
         lay.addRow('Frame Color', self.__frameColorBtn)
-        lay.addRow('Menu Color', self.__menuColorBtn)
 
         colorGrpBox.setLayout(lay)
 
@@ -91,12 +84,6 @@ class SettingsDialog(QDialog):
         reply = dialog.exec()
         if reply == QDialog.Accepted:
             self.__frameColorBtn.setColor(dialog.getColor())
-
-    def __showMenuColorDialog(self):
-        dialog = ColorPickerDialog(self.__menuColor)
-        reply = dialog.exec()
-        if reply == QDialog.Accepted:
-            self.__menuColorBtn.setColor(dialog.getColor())
 
     def getFrameColor(self):
         return self.__frameColorBtn.getColor()
