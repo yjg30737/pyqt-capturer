@@ -136,12 +136,3 @@ class Capturer(TransparentCentralWidgetWindow):
         if e.type() == 17:
             self.setFrameColor(self.__frameColor)
         return super().event(e)
-
-
-if __name__ == "__main__":
-    import sys
-
-    app = QApplication(sys.argv)
-    ex = Capturer()
-    ex.show()
-    sys.exit(app.exec_())
