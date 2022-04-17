@@ -6,7 +6,7 @@ import mss.tools
 
 from PyQt5.QtCore import Qt, QSettings
 from PyQt5.QtGui import QFont, QWindow
-from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog
+from PyQt5.QtWidgets import QMainWindow, QDialog
 from pyqt_timer_label import TimerLabel
 from pyqt_transparent_centralwidget_window import TransparentCentralWidgetWindow
 from pyqt_svg_icon_pushbutton import SvgIconPushButton
