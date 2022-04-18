@@ -34,7 +34,9 @@ class Capturer(TransparentCentralWidgetWindow):
         self.__savePath = self.__settingsStruct.value('savePath', os.getcwd())
 
     def __initUi(self, main_window):
+        self.setMenuTitle(title='Capturer', icon_filename='ico/cam.svg')
         self.setButtons()
+
         cornerWidget = self.getCornerWidget()
         lay = cornerWidget.layout()
 
@@ -64,8 +66,6 @@ class Capturer(TransparentCentralWidgetWindow):
         lay.setAlignment(Qt.AlignVCenter | Qt.AlignRight)
 
         self.setFrameColor(self.__frameColor)
-
-        self.setMenuTitle(title='Capturer', icon_filename='ico/cam.svg')
 
     def __initScreenGeometry(self):
         w = QWindow()
