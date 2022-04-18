@@ -7,7 +7,7 @@ setup(
     author_email='yjg30737@gmail.com',
     license='MIT',
     packages=find_packages(),
-    package_data={'pyqt_capturer.ico': ['capture.svg', 'settings.svg', 'video.svg']},
+    package_data={'pyqt_capturer.ico': ['cam.svg', 'capture.svg', 'settings.svg', 'video.svg']},
     description='PyQt application which can capture/record certain area of screen',
     url='https://github.com/yjg30737/pyqt-capturer.git',
     install_requires=[
