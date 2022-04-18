@@ -34,7 +34,7 @@ class Capturer(TransparentCentralWidgetWindow):
         self.__savePath = self.__settingsStruct.value('savePath', os.getcwd())
 
     def __initUi(self, main_window):
-        self.setMenuTitle('Capturer')
+        self.setMenuTitle(title='Capturer', icon_filename='ico/cam.svg')
         self.setButtons()
         cornerWidget = self.getCornerWidget()
         lay = cornerWidget.layout()
