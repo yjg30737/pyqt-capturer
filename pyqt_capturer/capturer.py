@@ -9,7 +9,7 @@ from PyQt5.QtGui import QFont, QWindow
 from PyQt5.QtWidgets import QMainWindow, QDialog
 from pyqt_timer_label import TimerLabel
 from pyqt_transparent_centralwidget_window import TransparentCentralWidgetWindow
-from pyqt_svg_icon_pushbutton import SvgIconPushButton
+from pyqt_svg_button import SvgButton
 
 from pyqt_capturer.settingsDialog import SettingsDialog
 
@@ -40,13 +40,13 @@ class Capturer(TransparentCentralWidgetWindow):
         cornerWidget = self.getCornerWidget()
         lay = cornerWidget.layout()
 
-        recordBtn = SvgIconPushButton(self)
+        recordBtn = SvgButton(self)
         recordBtn.setShortcut('F6')
         recordBtn.setIcon('ico/video.svg')
         recordBtn.setCheckable(True)
         recordBtn.toggled.connect(self.__recordToggled)
 
-        captureBtn = SvgIconPushButton(self)
+        captureBtn = SvgButton(self)
         captureBtn.setShortcut('F5')
         captureBtn.setIcon('ico/capture.svg')
         captureBtn.clicked.connect(self.__capture)
@@ -55,7 +55,7 @@ class Capturer(TransparentCentralWidgetWindow):
         self.__timer_lbl.setFont(QFont('Arial', 12))
         self.__timer_lbl.setTimerReverse(False)
 
-        settingsBtn = SvgIconPushButton(self)
+        settingsBtn = SvgButton(self)
         settingsBtn.setIcon('ico/settings.svg')
         settingsBtn.clicked.connect(self.__settings)
 

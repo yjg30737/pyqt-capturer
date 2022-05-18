@@ -17,7 +17,7 @@ setup(
         'numpy',
         'pyqt-timer-label>=0.0.1',
         'pyqt-transparent-centralwidget-window>=0.0.1',
-        'pyqt-svg-icon-pushbutton>=0.0.1',
+        'pyqt-svg-button>=0.0.1',
         'pyqt-color-button @ git+https://git@github.com/yjg30737/pyqt-color-button.git@main',
         'pyqt-color-picker>=0.0.1',
         'pyqt-find-path-widget @ git+https://git@github.com/yjg30737/pyqt-find-path-widget.git@main'
