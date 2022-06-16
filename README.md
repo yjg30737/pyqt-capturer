@@ -32,6 +32,8 @@ You can see the label next to recorder icon. That is elapsed time from starting 
 
 You can move/resize the frame.
 
+You can change the frame color and save path in "Settings". (pressing gear icon)
+
 ## Example
 Code Sample
 ```python
@@ -47,10 +49,10 @@ if __name__ == "__main__":
     sys.exit(app.exec_())
 ```
 
-Result (Google Chrome main page's Google logo, for example)
+Result
 
-![image](https://user-images.githubusercontent.com/55078043/160045489-a7b016cf-0528-4a49-b085-f4e99869d5c4.png)
+![image](https://user-images.githubusercontent.com/55078043/174037790-d08161cd-839e-407c-ac94-f1ecd1338ceb.png)
 
 Captured image
 
-![sample](https://user-images.githubusercontent.com/55078043/160045548-90708381-7870-435d-b750-051533d878a2.png)
+![image](https://user-images.githubusercontent.com/55078043/174037898-e8b4b05e-7183-4de1-8043-e13bd53d0ef8.png)
