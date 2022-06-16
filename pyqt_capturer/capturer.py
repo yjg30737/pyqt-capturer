@@ -34,7 +34,6 @@ class Capturer(TransparentCentralWidgetWindow):
         self.__savePath = self.__settingsStruct.value('savePath', os.getcwd())
 
     def __initUi(self, main_window):
-        self.setMenuTitle(title='Capturer', icon_filename='ico/cam.svg')
         self.setButtons()
 
         cornerWidget = self.getCornerWidget()
@@ -65,6 +64,8 @@ class Capturer(TransparentCentralWidgetWindow):
         lay.insertWidget(0, captureBtn)
         lay.setAlignment(Qt.AlignVCenter | Qt.AlignRight)
 
+        self.setMenuTitle(title='Capturer', icon_filename='ico/cam.svg')
+
         self.setFrameColor(self.__frameColor)
 
     def __initScreenGeometry(self):
@@ -74,13 +75,13 @@ class Capturer(TransparentCentralWidgetWindow):
         screen_g = self.window().geometry()
 
         self.__top = (screen_g.top() + self.getInnerWidget().menuBar().height() + self._margin) * r
-        self.__left = (screen_g.left()+self._margin) * r
-        self.__width = (screen_g.width()-self._margin*2) * r
-        self.__height = (screen_g.height()-self.getInnerWidget().menuBar().height()-self._margin*2) * r
+        self.__left = (screen_g.left() + self._margin) * r
+        self.__width = (screen_g.width() - self._margin * 2) * r
+        self.__height = (screen_g.height() - self.getInnerWidget().menuBar().height() - self._margin * 2) * r
 
     def __initRecordThread(self):
         self.__t = threading.Thread(target=self.__recordThread,
-                                    args=(self.__top, self.__left, self.__width, self.__height, ))
+                                    args=(self.__top, self.__left, self.__width, self.__height,))
 
     def __recordThread(self, top, left, width, height):
         with mss.mss() as sct:
