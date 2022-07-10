@@ -67,6 +67,7 @@ class Capturer(TransparentCentralWidgetWindow):
         self.setMenuTitle(title='Capturer', icon_filename='ico/cam.svg')
 
         self.setFrameColor(self.__frameColor)
+        self.resize(600, 400)
 
     def __initScreenGeometry(self):
         w = QWindow()
