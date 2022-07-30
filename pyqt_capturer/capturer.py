@@ -39,6 +39,12 @@ class Capturer(TransparentCentralWidgetWindow):
         cornerWidget = self.getCornerWidget()
         lay = cornerWidget.layout()
 
+        fullScreenBtn = SvgButton(self)
+        fullScreenBtn.setShortcut('F11')
+        fullScreenBtn.setIcon('ico/full_screen.svg')
+        fullScreenBtn.setCheckable(True)
+        fullScreenBtn.toggled.connect(self.__fullScreenToggled)
+
         recordBtn = SvgButton(self)
         recordBtn.setShortcut('F6')
         recordBtn.setIcon('ico/video.svg')
@@ -62,6 +68,7 @@ class Capturer(TransparentCentralWidgetWindow):
         lay.insertWidget(0, self.__timer_lbl)
         lay.insertWidget(0, recordBtn)
         lay.insertWidget(0, captureBtn)
+        lay.insertWidget(0, fullScreenBtn)
         lay.setAlignment(Qt.AlignVCenter | Qt.AlignRight)
 
         self.setMenuTitle(title='Capturer', icon_filename='ico/cam.svg')
@@ -79,6 +86,12 @@ class Capturer(TransparentCentralWidgetWindow):
         self.__left = (screen_g.left() + self._margin) * r
         self.__width = (screen_g.width() - self._margin * 2) * r
         self.__height = (screen_g.height() - self.getInnerWidget().menuBar().height() - self._margin * 2) * r
+
+    def __fullScreenToggled(self, f):
+        if f:
+            self.showFullScreen()
+        else:
+            self.showNormal()
 
     def __initRecordThread(self):
         self.__t = threading.Thread(target=self.__recordThread,
