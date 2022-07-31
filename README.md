@@ -32,6 +32,8 @@ You can see the label next to recorder icon. That is elapsed time from starting 
 
 You can move/resize the frame.
 
+Full screen feature is added from v0.2.1(basic, can't tell it is fully functional).
+
 You can change the frame color and save path in "Settings". (pressing gear icon)
 
 ## Example
