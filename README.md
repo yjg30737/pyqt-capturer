@@ -17,6 +17,7 @@ PyQt application which can capture/record certain area of screen
 * <a href="https://github.com/yjg30737/pyqt-color-button.git">pyqt-color-button</a> - Used by Settings Dialog
 * <a href="https://github.com/yjg30737/pyqt-color-picker.git">pyqt-color-picker</a> - Used by Settings Dialog
 * <a href="https://github.com/yjg30737/pyqt-find-path-widget.git">pyqt-find-path-widget</a> - Used by Settings Dialog
+* <a href="https://github.com/yjg30737/pyqt-toast.git">pyqt-toast</a>
 
 ## Detailed Description
 
