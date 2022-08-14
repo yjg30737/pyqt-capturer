@@ -78,7 +78,8 @@ class Capturer(TransparentCentralWidgetWindow):
         self.resize(600, 400)
 
         self.__toast = Toast(text='Full screen mode', duration=3, parent=self)
-        self.__toast.setFont(QFont('Arial', 20))
+        self.__toast.setFont(QFont('Arial', 30))
+        self.__toast.setAlignment(Qt.AlignCenter | Qt.AlignVCenter)
 
     def __initScreenGeometry(self):
         w = QWindow()
