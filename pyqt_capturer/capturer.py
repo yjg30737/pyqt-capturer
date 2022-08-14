@@ -12,6 +12,7 @@ from pyqt_transparent_centralwidget_window import TransparentCentralWidgetWindow
 from pyqt_svg_button import SvgButton
 
 from pyqt_capturer.settingsDialog import SettingsDialog
+from pyqt_toast import Toast
 
 
 class Capturer(TransparentCentralWidgetWindow):
@@ -75,6 +76,9 @@ class Capturer(TransparentCentralWidgetWindow):
 
         self.setFrameColor(self.__frameColor)
         self.resize(600, 400)
+
+        self.__toast = Toast(text='Full screen mode', duration=3, parent=self)
+        self.__toast.setFont(QFont('Arial', 20))
 
     def __initScreenGeometry(self):
         w = QWindow()
@@ -151,4 +155,10 @@ class Capturer(TransparentCentralWidgetWindow):
     def event(self, e):
         if e.type() == 17:
             self.setFrameColor(self.__frameColor)
+        elif e.type() == 105:
+            if int(self.windowState()) == 4:
+                self.__toast.show()
+            else:
+                self.__toast.hide()
+
         return super().event(e)
