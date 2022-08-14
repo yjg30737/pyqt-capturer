@@ -156,6 +156,7 @@ class Capturer(TransparentCentralWidgetWindow):
         if e.type() == 17:
             self.setFrameColor(self.__frameColor)
         elif e.type() == 105:
+            # show toast when full screen activated
             if int(self.windowState()) == 4:
                 self.__toast.show()
             else:
