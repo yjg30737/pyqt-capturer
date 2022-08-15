@@ -159,8 +159,9 @@ class Capturer(TransparentCentralWidgetWindow):
         elif e.type() == 105:
             # show toast when full screen activated
             if int(self.windowState()) == 4:
-                self.__toast.show()
-            else:
-                self.__toast.hide()
+                if self.__toast.isVisible():
+                    pass
+                else:
+                    self.__toast.show()
 
         return super().event(e)
