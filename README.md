@@ -23,7 +23,7 @@ PyQt application which can capture/record certain area of screen
 
 ![image](https://user-images.githubusercontent.com/55078043/160047499-be3de7f6-663c-4d47-8309-69bdf1565314.png)
 
-This is camera app.
+This is the camera app.
 
 If you click the camera icon it will capture anything inside of the frame and save it as "sample.png" at script folder.
 
