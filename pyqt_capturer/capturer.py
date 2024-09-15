@@ -72,7 +72,7 @@ class Capturer(TransparentCentralWidgetWindow):
         lay.insertWidget(0, fullScreenBtn)
         lay.setAlignment(Qt.AlignVCenter | Qt.AlignRight)
 
-        self.setMenuTitle(title='Capturer', icon_filename='ico/cam.svg')
+        self.setMenuAsTitleBar(title='Capturer', icon_filename='ico/cam.svg')
 
         self.setFrameColor(self.__frameColor)
         self.resize(600, 400)
